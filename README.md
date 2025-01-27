@@ -3,6 +3,9 @@
 
 ##  Usage Tutorial:  
 First install nodejs, cmder, install nvm and install npm 16.0.0   
+
+
+cd node-spfm-denjhang  
 npm -i  
 npm install -g  
 
