@@ -1,0 +1,69 @@
+先安装nodejs，cmder，安装nvm安装npm 16.0.0
+npm -i
+npm install -g
+
+spfm play --help
+
+spfm-play
+
+  Play music files with SPFM-Light.
+
+SYNOPSIS
+
+  spfm play [<option>] <file>
+
+OPTIONS
+
+  --file string
+  -s, --song num               KSS subsong number.
+  -h, --help                   Show this help.
+  --force-reset                Always reset device after stop playing.
+  --fade-time number           Specify time to continue playing in seconds after the loop count is exceeded.
+                               Fade-out works only if implemented (currently none of chips supports it).
+  --loop-count number          Specifies the number of loops to be played.
+  -p, --prioritize chip        Assign modules with priority to the specified chip type.
+  --simulate-ym2612-dac mode   (Experimental) Simulate YM2612 DAC stream with YM2608's SSG or ADPCM. Valid
+                               values are 'none', 'ssg', 'adpcm' or 'adpcm2'. The default value is 'adpcm'.
+                               If 'adpcm' results wrong playback, use 'adpcm2' instead.
+
+KEYS
+
+  Cursor Left/Right - Down/Up playback speed.
+  Cursor Down - Default playback speed.
+  R - Restart current Track
+  PageUp/B - Previous Track
+  PageDown/N - Next Track
+  Shift + PageUp/B - Previous 10 Tracks
+  Shift + PageDown/N - Next 10 Tracks
+
+SUPPORTED FILETYPES
+
+  Video Game Music Files (.vgm, .vgz)
+  KSS Files (.kss)
+  MGSDRV Files (.mgs)
+  MuSICA / Kinrou5 Files (.bgm)
+  MPK Files (.mpk)
+  OPLL Driver Files (.opx)
+
+SUPPORTED MODULES
+
+  AY-3-8910 (PSG)
+  SN76489 (DPSG)
+  YM2203 (OPN)
+  YM2608 (OPNA)
+  YM2612 (OPN2)
+  YM2413 (OPLL)
+  YM3526 (OPL)
+  YM3812 (OPL2)
+
+spfm config
+选择AY8910-3.58
+spfm play Playlist.m3u --simulate-ym2612-dac adpcm2
+adpcm2适合音频流
+
+spfm play Playlist.m3u --simulate-ym2612-dac adpcm
+adpcm2适合普通DAC命令
+
+spfm play Playlist.m3u --simulate-ym2612-dac ssg
+不适合实时播放。仅适合转换到vgm
+
