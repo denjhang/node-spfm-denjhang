@@ -1,7 +1,7 @@
 # node-spfm-denjhang
  This revision fixes the conversion of YM2612.PCM to YM2608.ADPCM.
 
-##Usage Tutorial:  
+##  Usage Tutorial:  
 First install nodejs, cmder, install nvm and install npm 16.0.0   
 npm -i  
 npm install -g  
